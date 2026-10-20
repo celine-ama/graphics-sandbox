@@ -1,0 +1,106 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  background: #111827;
+}
+
+canvas {
+  display: block;
+}
+
+
+/* CONTROL PANEL */
+
+/* Position the panel on top of the 3D scene */
+.control-panel {
+  position: absolute;
+
+  /* Place it in the top-left corner */
+  top: 20px;
+  left: 20px;
+
+  /* Make sure it appears above the canvas */
+  z-index: 10;
+
+  /* Panel appearance */
+  width: 280px;
+  padding: 20px;
+  background: #1e293b;
+  color: white;
+  border-radius: 12px;
+
+  /* Make text easier to read */
+  font-family: Arial, sans-serif;
+}
+
+/* Style the buttons */
+.control-panel button {
+  padding: 10px;
+  margin: 5px 0;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Change color when hovering over a button */
+.control-panel button:hover {
+  background: #1d4ed8;
+}
+
+
+/* ======================================
+   OBJECT INSPECTOR
+   ====================================== */
+
+.object-inspector {
+  /* Place the inspector in the top-right corner */
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  /* Keep it above the 3D canvas */
+  z-index: 10;
+
+  width: 280px;
+  padding: 20px;
+
+  /* Match our existing control panel */
+  background: #1e293b;
+  color: white;
+  border-radius: 12px;
+
+  font-family: Arial, sans-serif;
+}
+
+.object-inspector h2 {
+  font-size: 20px;
+  margin: 0 0 16px;
+}
+
+.object-inspector h3 {
+  font-size: 14px;
+  color: #94a3b8;
+  margin-top: 18px;
+  margin-bottom: 6px;
+}
+
+.object-inspector p {
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Smaller screens: avoid overlapping the left panel */
+@media (max-width: 650px) {
+  .object-inspector {
+    top: auto;
+    bottom: 20px;
+    right: 10px;
+    width: min(280px, calc(100vw - 20px));
+  }
+}
